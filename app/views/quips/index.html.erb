@@ -1,28 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="index-wrapper">
+  <%= render 'header' %>
 
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @quips.each do |quip| %>
-        <tr class="card">
-          <td><%= quip.body %></td>
-          <td><%= link_to 'Show', quip %></td>
-          <td><%= link_to 'Edit', edit_quip_path(quip) %></td>
-          <td><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New Quip', new_quip_path %>
+  <div class="index-content-wrapper">
+    <%= render 'profile' %>
+    <%= render 'feed'%>
+  </div>
 
 </div>

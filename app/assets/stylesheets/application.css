@@ -86,6 +86,29 @@ footer {
 }
 
 
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.index-header {
+    grid-area: index-header;
+}
+
+.index-content-wrapper {
+    display: grid;
+grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+           "....... index-header  index-header"
+                    "sidebar content content";
+    align-items: baseline;
+}
+
+
 /*Styling for the index page.*/
 .index-wrapper {
     display: grid;
@@ -97,9 +120,15 @@ footer {
     grid-row-gap: 15px;
 }
 
-.index-header {
-    grid-area: index-header;
+.index-feed{
+    grid-area: index-feed;
 }
+
+.index-profile {
+    grid-area: index-profile;
+}
+
+
 
 .index-title {
     font: Helvetica;
