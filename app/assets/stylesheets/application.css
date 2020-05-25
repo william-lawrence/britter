@@ -91,10 +91,10 @@ html, body, .index-container { height: 100%; margin: 0; }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 10px 10px;
   grid-template-areas: 
     "header header header header" 
-    "profile compose compose compose" 
+    "profile composer composer composer" 
     "profile feed feed feed";
 }
 
@@ -104,7 +104,7 @@ html, body, .index-container { height: 100%; margin: 0; }
 
 .feed { grid-area: feed; }
 
-.compose {grid-area: compose;}
+.composer {grid-area: composer;}
 
 /*Styling for the index page.*/
 .index-wrapper {

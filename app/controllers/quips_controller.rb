@@ -5,6 +5,7 @@ class QuipsController < ApplicationController
   # GET /quips.json
   def index
     @quips = Quip.all
+    @quip = Quip.new
   end
 
   # GET /quips/1
