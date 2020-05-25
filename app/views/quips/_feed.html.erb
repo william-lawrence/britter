@@ -1,31 +1,19 @@
 <div class="feed">
   <p id="notice"><%= notice %></p>
-
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody class="card">
-        <% @quips.each do |quip| %>
-          <tr>
-            <td><%= quip.user.name %></td>
-            <td>@<%= quip.user.username %></td>
-          </tr>
-          <tr>
-            <td><%= quip.body %></td>
-            <td><%= link_to 'Show', quip %></td>
-            <td><%= link_to 'Edit', edit_quip_path(quip) %></td>
-            <td><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <br>
-  </div>
+  
+  <% @quips.each do |quip| %>
+    <div class="quip-container card">
+      <div class="user-info">
+        <span><%= quip.user.name %> @<%= quip.user.username %></span>
+      </div>
+      <div class="quip-body">
+        <%= quip.body %>
+      </div>
+      <div class="quip-options">
+        <span><%= link_to 'Show', quip %></span>
+        <span><%= link_to 'Edit', edit_quip_path(quip) %></span>
+        <span><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </div>
+    </div>
+  <% end %>
 </div>

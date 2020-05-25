@@ -35,9 +35,6 @@
     padding-left: 12px;
     margin-bottom: 15px;
     position: relative;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
     background: white;
     background-image: initial;
     background-position-x: initial;
@@ -87,6 +84,8 @@ footer {
 
 html, body, .index-container { height: 100%; margin: 0; }
 
+/*styling for the index*/
+
 .index-container {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -105,6 +104,26 @@ html, body, .index-container { height: 100%; margin: 0; }
 .feed { grid-area: feed; }
 
 .composer {grid-area: composer;}
+
+/* Styling for the quips in the feed */
+.quip-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+                "user-info "
+                "quip-body "
+                "quip-options";
+  }
+  
+  .user-info { grid-area: user-info; }
+  
+  .user-avi { grid-area: user-avi; }
+  
+  .quip-body { grid-area: quip-body; }
+
+  .quip-options { grid-area: quip-options; } 
 
 /*Styling for the index page.*/
 .index-wrapper {
