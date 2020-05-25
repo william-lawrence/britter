@@ -4,7 +4,7 @@ class QuipsController < ApplicationController
   # GET /quips
   # GET /quips.json
   def index
-    @quips = Quip.all
+    @quips = Quip.all.order("created_at DESC")
     @quip = Quip.new
   end
 
@@ -29,7 +29,7 @@ class QuipsController < ApplicationController
 
     respond_to do |format|
       if @quip.save
-        format.html { redirect_to @quip, notice: 'Quip was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Quip was successfully created.' }
         format.json { render :show, status: :created, location: @quip }
       else
         format.html { render :new }
