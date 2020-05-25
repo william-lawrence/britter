@@ -89,13 +89,13 @@ html, body, .index-container { height: 100%; margin: 0; }
 
 .index-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr;
   gap: 10px 10px;
   grid-template-areas: 
     "header header header header" 
     "profile composer composer composer" 
-    "profile feed feed feed";
+    "....... feed feed feed";
 }
 
 .header { grid-area: header; }

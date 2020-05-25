@@ -1,7 +1,7 @@
 class QuipsController < ApplicationController
   before_action :set_quip, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   # GET /quips
   # GET /quips.json
   def index
@@ -16,7 +16,7 @@ class QuipsController < ApplicationController
 
   # GET /quips/new
   def new
-    @quip = Quip.new
+    @quip = current_user.quips.build
   end
 
   # GET /quips/1/edit
@@ -26,7 +26,7 @@ class QuipsController < ApplicationController
   # POST /quips
   # POST /quips.json
   def create
-    @quip = Quip.new(quip_params)
+    @quip = current_user.quips.build(quip_params)
 
     respond_to do |format|
       if @quip.save
