@@ -1,3 +1,8 @@
 <div class="composer card">
     <h1>Composer</h1>
+
+    <%= simple_form_for @quip do |f| %>
+        <%= f.input :body %>
+        <%= f.button :submit %>
+    <% end %>
 <div>
