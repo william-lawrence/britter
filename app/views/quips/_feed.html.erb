@@ -10,9 +10,13 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="card">
         <% @quips.each do |quip| %>
-          <tr class="card">
+          <tr>
+            <td><%= quip.user.name %></td>
+            <td>@<%= quip.user.username %></td>
+          </tr>
+          <tr>
             <td><%= quip.body %></td>
             <td><%= link_to 'Show', quip %></td>
             <td><%= link_to 'Edit', edit_quip_path(quip) %></td>

@@ -1,6 +1,8 @@
 <div class="index-container">
   <%= render 'header' %>
-  <%= render 'profile' %>
+  <%if user_signed_in?%>
+    <%= render 'profile' %>
+  <% end %>
   <%= render 'feed'%>
   <%= render 'composer'%>
 </div>
