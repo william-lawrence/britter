@@ -1,4 +1,5 @@
 <div class="card profile">
-    <h3>User</h3>
-    <strong>@User</strong>
+    <h3><%= link_to current_user.name, edit_user_registration_path %></h3>
+    <strong>@<%= current_user.username %></strong>
+    
 </div>
