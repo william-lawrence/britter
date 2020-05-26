@@ -11,7 +11,13 @@
       </div>
       <div class="quip-options">
         <span><%= link_to 'Show', quip %></span>
-        <span><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+        <% if user_signed_in? %>
+          <% if quip.user.id == current_user.id %>
+            <span><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
+        <% end %>
+
       </div>
     </div>
   <% end %>
