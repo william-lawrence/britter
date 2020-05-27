@@ -1,5 +1,5 @@
 class QuipsController < ApplicationController
-  before_action :set_quip, only: [:show, :edit, :update, :destroy]
+  before_action :set_quip, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /quips
@@ -12,6 +12,7 @@ class QuipsController < ApplicationController
   # GET /quips/1
   # GET /quips/1.json
   def show
+    @quip = Quip.find(params[:id])
   end
 
   # GET /quips/new
@@ -75,7 +76,7 @@ class QuipsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quip
-      @quip = Quip.find(params[:id])
+      @quip = current_user.quips.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
