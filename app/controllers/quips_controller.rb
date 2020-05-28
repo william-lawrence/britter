@@ -12,7 +12,7 @@ class QuipsController < ApplicationController
   # GET /quips/1
   # GET /quips/1.json
   def show
-    @quip = Quip.find(params[:id])
+    
   end
 
   # GET /quips/new
@@ -48,7 +48,7 @@ class QuipsController < ApplicationController
         format.html { redirect_to @quip, notice: 'Quip was successfully updated.' }
         format.json { render :show, status: :ok, location: @quip }
       else
-        format.html { render :edit }
+        format.html { render :index }
         format.json { render json: @quip.errors, status: :unprocessable_entity }
       end
     end
@@ -57,7 +57,7 @@ class QuipsController < ApplicationController
   # DELETE /quips/1
   # DELETE /quips/1.json
   def destroy
-    if current_user.id == @quip.id
+    if current_user.id == @quip.user_id
       @quip.destroy
       respond_to do |format|
         format.html { redirect_to quips_url, notice: 'Quip was successfully destroyed.' }
