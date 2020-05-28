@@ -88,6 +88,19 @@ html, body, .index-container {
     margin-top: 10px;
 }
 
+.registration-container {
+    text-align: center;
+}
+
+.registration {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    max-width: 25%;
+    display: inline-block;
+    font: Helvetica;
+}
 
 
 /*styling for the index*/
@@ -176,7 +189,6 @@ html, body, .index-container {
 .board-content {
     grid-area: index-content
 }
-
 
 /*Styling for the edit page.*/
 .edit-wrapper {
