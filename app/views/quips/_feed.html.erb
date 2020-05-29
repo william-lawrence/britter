@@ -1,0 +1,21 @@
+<div class="feed">
+  
+  <% quips.each do |quip| %>
+    <div class="quip-container card">
+      <div class="user-info">
+        <span><%= quip.user.name %> @<%= quip.user.username %></span>
+      </div>
+      <div class="quip-body">
+        <%= simple_format(quip.body) %>
+      </div>
+      <div class="quip-options">
+        <span><%= link_to 'Show', quip %></span>
+        <% if user_signed_in? %>
+          <% if quip.user.id == current_user.id %>
+            <span><%= link_to 'Destroy', quip, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

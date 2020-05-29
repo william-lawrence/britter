@@ -1,0 +1,15 @@
+
+<header class="header card">
+    <h1 class="index-title">Britter</h1>
+    <div class="index-content-wrapper">
+      <div class="index-menu">
+        <% if user_signed_in? %>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path %>
+          <%= link_to 'Register', new_user_registration_path %>
+        <% end %>
+      </div>
+    </div>
+</header>
+    

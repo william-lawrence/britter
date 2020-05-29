@@ -1,0 +1,221 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.card {
+    width: calc(100% - 30px);
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    background: white;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: white;
+    display: block;
+    color: #0a0a0a;
+    border-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: 1px solid #d6d6d6;
+    border-top-color: rgb(214, 214, 214);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(214, 214, 214);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(214, 214, 214);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(214, 214, 214);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    box-shadow: 3px 3px 0px #bababa;
+}
+
+textarea {
+    height: 10em;
+    width: 100%;
+}
+
+footer {
+    grid-area: footer;
+    font: Helvetica;
+}
+
+html, body, .index-container {
+    height: 100%;
+    margin: 0; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.registration-container {
+    text-align: center;
+}
+
+.registration {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    max-width: 25%;
+    display: inline-block;
+    font: Helvetica;
+}
+
+
+/*styling for the index*/
+
+.index-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr;
+  gap: 10px 10px;
+  grid-template-areas: 
+    "header header header header" 
+    "profile composer composer composer" 
+    "....... feed feed feed";
+}
+
+.header { grid-area: header; }
+
+.profile { grid-area: profile; }
+
+.feed { grid-area: feed; }
+
+.composer {grid-area: composer;}
+
+/* Styling for the quips in the feed */
+.quip-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+                "user-info "
+                "quip-body "
+                "quip-options";
+  }
+  
+  .user-info { grid-area: user-info; }
+  
+  .user-avi { grid-area: user-avi; }
+  
+  .quip-body { grid-area: quip-body; }
+
+  .quip-options { grid-area: quip-options; } 
+
+/*Styling for the index page.*/
+.index-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "index-header"
+        "index-content-wrapper"
+        "footer";
+    grid-row-gap: 15px;
+}
+
+.index-feed{
+    grid-area: index-feed;
+}
+
+.index-profile {
+    grid-area: index-profile;
+}
+
+.index-title {
+    font: Helvetica;
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.index-menu {
+    font: Helvetica;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.board-content-title {
+    font: Helvetica;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.board-content-description {
+    font: garamond;
+    font-size: 1.2em;
+}
+
+.board-content {
+    grid-area: index-content
+}
+
+/*Styling for the edit page.*/
+.edit-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "edit-header"
+        "edit-content";
+    grid-row-gap: 15px;
+}
+
+.edit-header {
+    grid-area: edit-header;
+}
+
+.edit-title {
+    font: Helvetica;
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.edit-content {
+    grid-area: edit-content;
+}
+
+.edit-content-description {
+    font: Helvetica;
+    font-weight: 600;
+    font-size: 2em;
+}

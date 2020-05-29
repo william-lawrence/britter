@@ -1,0 +1,9 @@
+<div class="index-container">
+  <%= render 'header' %>
+  <%if user_signed_in?%>
+    <%= render 'profile' %>
+  <% end %>
+  # passing quip as local (you can do as many as you want)
+  <%= render 'feed', quips: @quips %>
+  <%= render 'composer'%>
+</div>
